@@ -85,7 +85,7 @@ import { SwaggerPetstore } from "Swagger-Petstore";
   const sdk = new SwaggerPetstore();
 
   const res = await sdk.pets.showPetById({
-    petId: "South bandwidth male",
+    petId: "string",
   });
 
   if (res.statusCode == 200) {

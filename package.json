@@ -1,9 +1,12 @@
 {
   "name": "Swagger-Petstore",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "demo",
   "scripts": {
-    "prepare": "tsc --build"
+    "prepare": "tsc --build",
+    "check:tsc": "tsc --noEmit --skipLibCheck",
+    "check:eslint": "eslint --max-warnings=0 src",
+    "check": "npm run check:tsc && npm run check:eslint"
   },
   "dependencies": {
     "axios": "^1.1.3",
