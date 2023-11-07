@@ -22,11 +22,11 @@ tsconfig.json
 src/sdk/models/operations/createpets.ts
 src/sdk/models/operations/listpets.ts
 src/sdk/models/operations/showpetbyid.ts
-src/sdk/models/operations/index.ts
 src/sdk/models/shared/error.ts
 src/sdk/models/shared/pet.ts
-src/sdk/models/shared/index.ts
 src/sdk/models/errors/index.ts
+src/sdk/models/operations/index.ts
+src/sdk/models/shared/index.ts
 USAGE.md
 docs/models/operations/createpetsresponse.md
 docs/models/operations/listpetsrequest.md

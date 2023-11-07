@@ -1,5 +1,5 @@
 # Pets
-(*pets*)
+(*.pets*)
 
 ### Available Operations
 
@@ -20,6 +20,7 @@ import { SwaggerPetstore } from "Swagger-Petstore";
   const sdk = new SwaggerPetstore();
 
   const res = await sdk.pets.createPets();
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -52,6 +53,7 @@ import { SwaggerPetstore } from "Swagger-Petstore";
   const sdk = new SwaggerPetstore();
 
   const res = await sdk.pets.listPets({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -87,6 +89,7 @@ import { SwaggerPetstore } from "Swagger-Petstore";
   const res = await sdk.pets.showPetById({
     petId: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
