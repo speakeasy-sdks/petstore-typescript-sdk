@@ -44,7 +44,7 @@ import { SwaggerPetstore } from "Swagger-Petstore";
 ## Available Resources and Operations
 
 
-### [.pets](docs/sdks/pets/README.md)
+### [pets](docs/sdks/pets/README.md)
 
 * [createPets](docs/sdks/pets/README.md#createpets) - Create a pet
 * [listPets](docs/sdks/pets/README.md#listpets) - List all pets
@@ -70,9 +70,32 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 
+## Example
+
+```typescript
+import { SwaggerPetstore } from "Swagger-Petstore";
+
+(async () => {
+    const sdk = new SwaggerPetstore();
+
+    let res;
+    try {
+        res = await sdk.pets.createPets();
+    } catch (e) {}
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
 <!-- End Error Handling -->
 
 
@@ -151,8 +174,6 @@ const httpClient = axios.create({
 
 const sdk = new SwaggerPetstore({defaultClient: httpClient});
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
