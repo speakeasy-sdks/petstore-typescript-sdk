@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { SwaggerPetstore } from "Swagger-Petstore";
 
