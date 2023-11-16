@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 2516596125ef223fbbef6c434d22eaac
   docVersion: 1.0.0
-  speakeasyVersion: 1.118.3
-  generationVersion: 2.187.7
+  speakeasyVersion: 1.120.3
+  generationVersion: 2.192.1
 generation:
   comments: {}
   sdkClassName: Swagger-Petstore
@@ -12,10 +12,10 @@ generation:
     optionalPropertyRendering: withExample
 features:
   typescript:
-    core: 3.1.3
+    core: 3.1.4
     globalServerURLs: 2.82.0
 typescript:
-  version: 0.4.2
+  version: 0.4.3
   author: demo
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
