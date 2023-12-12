@@ -27,7 +27,6 @@ src/sdk/models/shared/pet.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
-USAGE.md
 docs/sdk/models/operations/createpetsresponse.md
 docs/sdk/models/operations/listpetsrequest.md
 docs/sdk/models/operations/listpetsresponse.md
@@ -37,4 +36,5 @@ docs/sdk/models/shared/errort.md
 docs/sdk/models/shared/pet.md
 docs/sdks/swaggerpetstore/README.md
 docs/sdks/pets/README.md
+USAGE.md
 .gitattributes
