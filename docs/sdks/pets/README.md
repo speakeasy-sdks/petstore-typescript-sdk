@@ -19,7 +19,10 @@ import { SwaggerPetstore } from "Swagger-Petstore";
 async function run() {
   const sdk = new SwaggerPetstore();
 
-  const res = await sdk.pets.createPets();
+  const res = await sdk.pets.createPets({
+    id: 596804,
+    name: "string",
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -33,6 +36,7 @@ run();
 
 | Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `request`                                                    | [shared.Pet](../../sdk/models/shared/pet.md)                 | :heavy_check_mark:                                           | The request object to use for the request.                   |
 | `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 

@@ -19,14 +19,32 @@ export class Pets {
     /**
      * Create a pet
      */
-    async createPets(config?: AxiosRequestConfig): Promise<operations.CreatePetsResponse> {
+    async createPets(
+        req: shared.Pet,
+        config?: AxiosRequestConfig
+    ): Promise<operations.CreatePetsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new shared.Pet(req);
+        }
+
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
         const operationUrl: string = baseURL.replace(/\/$/, "") + "/pets";
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers: RawAxiosRequestHeaders = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
+        if (reqBody == null) throw new Error("request body is required");
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
@@ -37,6 +55,7 @@ export class Pets {
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
+            data: reqBody,
             ...config,
         });
 
