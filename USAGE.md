@@ -7,7 +7,7 @@ async function run() {
 
     const res = await sdk.pets.createPets({
         id: 596804,
-        name: "string",
+        name: "<value>",
     });
 
     if (res.statusCode == 200) {

@@ -21,7 +21,7 @@ async function run() {
 
   const res = await sdk.pets.createPets({
     id: 596804,
-    name: "string",
+    name: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -101,7 +101,7 @@ async function run() {
   const sdk = new SwaggerPetstore();
 
   const res = await sdk.pets.showPetById({
-    petId: "string",
+    petId: "<value>",
   });
 
   if (res.statusCode == 200) {

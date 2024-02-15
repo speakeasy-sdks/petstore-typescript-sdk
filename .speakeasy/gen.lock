@@ -4,15 +4,15 @@ management:
   docChecksum: 1bdb7a6f8bf3995d4b40475228403253
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.230.3
-  releaseVersion: 0.5.2
-  configChecksum: 3601ed3164f615e4724e75e3801a0816
+  generationVersion: 2.258.2
+  releaseVersion: 0.5.3
+  configChecksum: 5d5f8925da10ee1f80d2b4e0ea056972
   repoURL: https://github.com/speakeasy-sdks/petstore-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/petstore-typescript-sdk
 features:
   typescript:
-    core: 3.4.5
+    core: 3.4.7
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/sdk/pets.ts

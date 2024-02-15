@@ -5,8 +5,10 @@ generation:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
 typescript:
-  version: 0.5.2
+  version: 0.5.3
   author: demo
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
