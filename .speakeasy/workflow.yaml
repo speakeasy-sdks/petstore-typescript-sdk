@@ -1,0 +1,12 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    petstore-api:
+        inputs:
+            - location: https://petstore3.swagger.io/api/v3/openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/lukehagar/lukehagar/petstore-api
+targets:
+    petstore-ts:
+        target: typescript
+        source: petstore-api

@@ -1,0 +1,28 @@
+speakeasyVersion: 1.296.1
+sources:
+    petstore-api:
+        sourceNamespace: petstore-api
+        sourceRevisionDigest: sha256:a0e4ec40cafc308b1b35eb827d6af7086d9f31e8800ef6ba6a9d7b5865a13151
+        sourceBlobDigest: sha256:e6434f3654406383f181adecfac68d6cd7c8689b9578152f07262dc67c763412
+        tags:
+            - latest
+targets:
+    petstore-ts:
+        source: petstore-api
+        sourceNamespace: petstore-api
+        sourceRevisionDigest: sha256:a0e4ec40cafc308b1b35eb827d6af7086d9f31e8800ef6ba6a9d7b5865a13151
+        sourceBlobDigest: sha256:e6434f3654406383f181adecfac68d6cd7c8689b9578152f07262dc67c763412
+        outLocation: /mnt/c/Users/Luke/Documents/GitHub/petstore-typescript-sdk
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        petstore-api:
+            inputs:
+                - location: https://petstore3.swagger.io/api/v3/openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/lukehagar/lukehagar/petstore-api
+    targets:
+        petstore-ts:
+            target: typescript
+            source: petstore-api

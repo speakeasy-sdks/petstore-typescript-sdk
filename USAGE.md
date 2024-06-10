@@ -1,18 +1,24 @@
 <!-- Start SDK Example Usage [usage] -->
 ```typescript
-import { SwaggerPetstore } from "Swagger-Petstore";
+import { Petstore } from "Petstore";
+
+const petstore = new Petstore({
+    petstoreAuth: "<YOUR_PETSTORE_AUTH_HERE>",
+});
 
 async function run() {
-    const sdk = new SwaggerPetstore();
-
-    const res = await sdk.pets.createPets({
-        id: 596804,
-        name: "<value>",
+    const result = await petstore.pet.addPetForm({
+        category: {
+            id: 1,
+            name: "Dogs",
+        },
+        id: 10,
+        name: "doggie",
+        photoUrls: ["<value>"],
     });
 
-    if (res.statusCode == 200) {
-        // handle response
-    }
+    // Handle the result
+    console.log(result);
 }
 
 run();
