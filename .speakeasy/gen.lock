@@ -3,10 +3,10 @@ id: 5748dc95-94a2-403e-994f-51a5e9dfe382
 management:
   docChecksum: 4d5b3941f104202a3b73114deb79761f
   docVersion: 1.0.19
-  speakeasyVersion: 1.296.1
-  generationVersion: 2.338.1
-  releaseVersion: 0.7.11
-  configChecksum: 3a70191b6c2df4a4e7d1048fddb009a8
+  speakeasyVersion: 1.330.0
+  generationVersion: 2.361.10
+  releaseVersion: 0.8.3
+  configChecksum: 5e9ae88aeddb9eec577ffd6a4d74fa6e
   repoURL: https://github.com/speakeasy-sdks/petstore-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/petstore-typescript-sdk
@@ -15,7 +15,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.5
-    core: 3.9.9
+    core: 3.11.5
     globalSecurity: 2.82.9
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
@@ -28,7 +28,7 @@ generatedFiles:
   - src/sdk/store.ts
   - src/sdk/usersdk.ts
   - src/sdk/sdk.ts
-  - .eslintrc.js
+  - .eslintrc.cjs
   - .npmignore
   - RUNTIMES.md
   - jsr.json
@@ -39,6 +39,7 @@ generatedFiles:
   - src/lib/encodings.ts
   - src/lib/http.ts
   - src/lib/is-plain-object.ts
+  - src/lib/primitives.ts
   - src/lib/retries.ts
   - src/lib/schemas.ts
   - src/lib/sdks.ts

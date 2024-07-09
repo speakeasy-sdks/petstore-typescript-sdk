@@ -1,18 +1,18 @@
-speakeasyVersion: 1.296.1
+speakeasyVersion: 1.330.0
 sources:
     petstore-api:
         sourceNamespace: petstore-api
-        sourceRevisionDigest: sha256:a0e4ec40cafc308b1b35eb827d6af7086d9f31e8800ef6ba6a9d7b5865a13151
-        sourceBlobDigest: sha256:e6434f3654406383f181adecfac68d6cd7c8689b9578152f07262dc67c763412
+        sourceRevisionDigest: sha256:3cd8e3317b7df06d6808bac4a6d09c9f8de81d4700cbd19fdfde5e7fdcdc81c7
+        sourceBlobDigest: sha256:79c630974223dafabfec84f1ebc065fa6dfb7e29b5e4dd658165e484d4b93ae8
         tags:
             - latest
 targets:
     petstore-ts:
         source: petstore-api
         sourceNamespace: petstore-api
-        sourceRevisionDigest: sha256:a0e4ec40cafc308b1b35eb827d6af7086d9f31e8800ef6ba6a9d7b5865a13151
-        sourceBlobDigest: sha256:e6434f3654406383f181adecfac68d6cd7c8689b9578152f07262dc67c763412
-        outLocation: /mnt/c/Users/Luke/Documents/GitHub/petstore-typescript-sdk
+        sourceRevisionDigest: sha256:3cd8e3317b7df06d6808bac4a6d09c9f8de81d4700cbd19fdfde5e7fdcdc81c7
+        sourceBlobDigest: sha256:79c630974223dafabfec84f1ebc065fa6dfb7e29b5e4dd658165e484d4b93ae8
+        outLocation: C:\Users\Luke\Documents\GitHub\petstore-typescript-sdk
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

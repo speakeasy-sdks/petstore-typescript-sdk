@@ -7,7 +7,7 @@ import {
   BeforeRequestHook,
   SDKInitHook,
   SDKInitOptions,
-} from "./types";
+} from "./types.js";
 
 import { PostHog } from "posthog-node";
 

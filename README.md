@@ -15,10 +15,25 @@
 npm add https://github.com/speakeasy-sdks/petstore-typescript-sdk
 ```
 
+### PNPM
+
+```bash
+pnpm add https://github.com/speakeasy-sdks/petstore-typescript-sdk
+```
+
+### Bun
+
+```bash
+bun add https://github.com/speakeasy-sdks/petstore-typescript-sdk
+```
+
 ### Yarn
 
 ```bash
-yarn add https://github.com/speakeasy-sdks/petstore-typescript-sdk
+yarn add https://github.com/speakeasy-sdks/petstore-typescript-sdk zod
+
+# Note that Yarn does not install peer dependencies automatically. You will need
+# to install zod as shown above.
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -112,7 +127,7 @@ Validation errors can also occur when either method arguments or data returned f
 
 ```typescript
 import { Petstore } from "Petstore";
-import * as errors from "Petstore/models";
+import { SDKValidationError } from "Petstore/models";
 
 const petstore = new Petstore({
     petstoreAuth: "<YOUR_PETSTORE_AUTH_HERE>",
@@ -132,7 +147,7 @@ async function run() {
         });
     } catch (err) {
         switch (true) {
-            case err instanceof errors.SDKValidationError: {
+            case err instanceof SDKValidationError: {
                 // Validation errors can be pretty-printed
                 console.error(err.pretty());
                 // Raw value may also be inspected

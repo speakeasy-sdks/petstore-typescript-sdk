@@ -10,9 +10,10 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
 typescript:
-  version: 0.7.11
+  version: 0.8.3
   additionalDependencies:
     dependencies:
+      '@sentry/node': ^8.9.2
       dexie: ^4.0.7
       posthog-node: ^4.0.1
     devDependencies: {}
@@ -33,7 +34,9 @@ typescript:
   inputModelSuffix: input
   maxMethodParams: 0
   methodArguments: require-security-and-request
+  moduleFormat: commonjs
   outputModelSuffix: output
   packageName: Petstore
   responseFormat: envelope
   templateVersion: v2
+  useIndexModules: true

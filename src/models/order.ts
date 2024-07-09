@@ -26,66 +26,68 @@ export type Order = {
 };
 
 /** @internal */
+export const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z.nativeEnum(Status);
+
+/** @internal */
+export const Status$outboundSchema: z.ZodNativeEnum<typeof Status> = Status$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Status$ {
-    export const inboundSchema = z.nativeEnum(Status);
-    export const outboundSchema = inboundSchema;
+    /** @deprecated use `Status$inboundSchema` instead. */
+    export const inboundSchema = Status$inboundSchema;
+    /** @deprecated use `Status$outboundSchema` instead. */
+    export const outboundSchema = Status$outboundSchema;
 }
 
 /** @internal */
+export const Order$inboundSchema: z.ZodType<Order, z.ZodTypeDef, unknown> = z.object({
+    complete: z.boolean().optional(),
+    id: z.number().int().optional(),
+    petId: z.number().int().optional(),
+    quantity: z.number().int().optional(),
+    shipDate: z
+        .string()
+        .datetime({ offset: true })
+        .transform((v) => new Date(v))
+        .optional(),
+    status: Status$inboundSchema.optional(),
+});
+
+/** @internal */
+export type Order$Outbound = {
+    complete?: boolean | undefined;
+    id?: number | undefined;
+    petId?: number | undefined;
+    quantity?: number | undefined;
+    shipDate?: string | undefined;
+    status?: string | undefined;
+};
+
+/** @internal */
+export const Order$outboundSchema: z.ZodType<Order$Outbound, z.ZodTypeDef, Order> = z.object({
+    complete: z.boolean().optional(),
+    id: z.number().int().optional(),
+    petId: z.number().int().optional(),
+    quantity: z.number().int().optional(),
+    shipDate: z
+        .date()
+        .transform((v) => v.toISOString())
+        .optional(),
+    status: Status$outboundSchema.optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace Order$ {
-    export const inboundSchema: z.ZodType<Order, z.ZodTypeDef, unknown> = z
-        .object({
-            complete: z.boolean().optional(),
-            id: z.number().int().optional(),
-            petId: z.number().int().optional(),
-            quantity: z.number().int().optional(),
-            shipDate: z
-                .string()
-                .datetime({ offset: true })
-                .transform((v) => new Date(v))
-                .optional(),
-            status: Status$.inboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.complete === undefined ? null : { complete: v.complete }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.petId === undefined ? null : { petId: v.petId }),
-                ...(v.quantity === undefined ? null : { quantity: v.quantity }),
-                ...(v.shipDate === undefined ? null : { shipDate: v.shipDate }),
-                ...(v.status === undefined ? null : { status: v.status }),
-            };
-        });
-
-    export type Outbound = {
-        complete?: boolean | undefined;
-        id?: number | undefined;
-        petId?: number | undefined;
-        quantity?: number | undefined;
-        shipDate?: string | undefined;
-        status?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Order> = z
-        .object({
-            complete: z.boolean().optional(),
-            id: z.number().int().optional(),
-            petId: z.number().int().optional(),
-            quantity: z.number().int().optional(),
-            shipDate: z
-                .date()
-                .transform((v) => v.toISOString())
-                .optional(),
-            status: Status$.outboundSchema.optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.complete === undefined ? null : { complete: v.complete }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.petId === undefined ? null : { petId: v.petId }),
-                ...(v.quantity === undefined ? null : { quantity: v.quantity }),
-                ...(v.shipDate === undefined ? null : { shipDate: v.shipDate }),
-                ...(v.status === undefined ? null : { status: v.status }),
-            };
-        });
+    /** @deprecated use `Order$inboundSchema` instead. */
+    export const inboundSchema = Order$inboundSchema;
+    /** @deprecated use `Order$outboundSchema` instead. */
+    export const outboundSchema = Order$outboundSchema;
+    /** @deprecated use `Order$Outbound` instead. */
+    export type Outbound = Order$Outbound;
 }

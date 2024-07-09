@@ -11,38 +11,39 @@ export type ApiResponse = {
 };
 
 /** @internal */
+export const ApiResponse$inboundSchema: z.ZodType<ApiResponse, z.ZodTypeDef, unknown> = z.object({
+    code: z.number().int().optional(),
+    message: z.string().optional(),
+    type: z.string().optional(),
+});
+
+/** @internal */
+export type ApiResponse$Outbound = {
+    code?: number | undefined;
+    message?: string | undefined;
+    type?: string | undefined;
+};
+
+/** @internal */
+export const ApiResponse$outboundSchema: z.ZodType<
+    ApiResponse$Outbound,
+    z.ZodTypeDef,
+    ApiResponse
+> = z.object({
+    code: z.number().int().optional(),
+    message: z.string().optional(),
+    type: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace ApiResponse$ {
-    export const inboundSchema: z.ZodType<ApiResponse, z.ZodTypeDef, unknown> = z
-        .object({
-            code: z.number().int().optional(),
-            message: z.string().optional(),
-            type: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.code === undefined ? null : { code: v.code }),
-                ...(v.message === undefined ? null : { message: v.message }),
-                ...(v.type === undefined ? null : { type: v.type }),
-            };
-        });
-
-    export type Outbound = {
-        code?: number | undefined;
-        message?: string | undefined;
-        type?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, ApiResponse> = z
-        .object({
-            code: z.number().int().optional(),
-            message: z.string().optional(),
-            type: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.code === undefined ? null : { code: v.code }),
-                ...(v.message === undefined ? null : { message: v.message }),
-                ...(v.type === undefined ? null : { type: v.type }),
-            };
-        });
+    /** @deprecated use `ApiResponse$inboundSchema` instead. */
+    export const inboundSchema = ApiResponse$inboundSchema;
+    /** @deprecated use `ApiResponse$outboundSchema` instead. */
+    export const outboundSchema = ApiResponse$outboundSchema;
+    /** @deprecated use `ApiResponse$Outbound` instead. */
+    export type Outbound = ApiResponse$Outbound;
 }

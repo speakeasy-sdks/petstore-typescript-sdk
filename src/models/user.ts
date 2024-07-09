@@ -19,63 +19,50 @@ export type User = {
 };
 
 /** @internal */
+export const User$inboundSchema: z.ZodType<User, z.ZodTypeDef, unknown> = z.object({
+    email: z.string().optional(),
+    firstName: z.string().optional(),
+    id: z.number().int().optional(),
+    lastName: z.string().optional(),
+    password: z.string().optional(),
+    phone: z.string().optional(),
+    userStatus: z.number().int().optional(),
+    username: z.string().optional(),
+});
+
+/** @internal */
+export type User$Outbound = {
+    email?: string | undefined;
+    firstName?: string | undefined;
+    id?: number | undefined;
+    lastName?: string | undefined;
+    password?: string | undefined;
+    phone?: string | undefined;
+    userStatus?: number | undefined;
+    username?: string | undefined;
+};
+
+/** @internal */
+export const User$outboundSchema: z.ZodType<User$Outbound, z.ZodTypeDef, User> = z.object({
+    email: z.string().optional(),
+    firstName: z.string().optional(),
+    id: z.number().int().optional(),
+    lastName: z.string().optional(),
+    password: z.string().optional(),
+    phone: z.string().optional(),
+    userStatus: z.number().int().optional(),
+    username: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
 export namespace User$ {
-    export const inboundSchema: z.ZodType<User, z.ZodTypeDef, unknown> = z
-        .object({
-            email: z.string().optional(),
-            firstName: z.string().optional(),
-            id: z.number().int().optional(),
-            lastName: z.string().optional(),
-            password: z.string().optional(),
-            phone: z.string().optional(),
-            userStatus: z.number().int().optional(),
-            username: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.firstName === undefined ? null : { firstName: v.firstName }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.lastName === undefined ? null : { lastName: v.lastName }),
-                ...(v.password === undefined ? null : { password: v.password }),
-                ...(v.phone === undefined ? null : { phone: v.phone }),
-                ...(v.userStatus === undefined ? null : { userStatus: v.userStatus }),
-                ...(v.username === undefined ? null : { username: v.username }),
-            };
-        });
-
-    export type Outbound = {
-        email?: string | undefined;
-        firstName?: string | undefined;
-        id?: number | undefined;
-        lastName?: string | undefined;
-        password?: string | undefined;
-        phone?: string | undefined;
-        userStatus?: number | undefined;
-        username?: string | undefined;
-    };
-
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, User> = z
-        .object({
-            email: z.string().optional(),
-            firstName: z.string().optional(),
-            id: z.number().int().optional(),
-            lastName: z.string().optional(),
-            password: z.string().optional(),
-            phone: z.string().optional(),
-            userStatus: z.number().int().optional(),
-            username: z.string().optional(),
-        })
-        .transform((v) => {
-            return {
-                ...(v.email === undefined ? null : { email: v.email }),
-                ...(v.firstName === undefined ? null : { firstName: v.firstName }),
-                ...(v.id === undefined ? null : { id: v.id }),
-                ...(v.lastName === undefined ? null : { lastName: v.lastName }),
-                ...(v.password === undefined ? null : { password: v.password }),
-                ...(v.phone === undefined ? null : { phone: v.phone }),
-                ...(v.userStatus === undefined ? null : { userStatus: v.userStatus }),
-                ...(v.username === undefined ? null : { username: v.username }),
-            };
-        });
+    /** @deprecated use `User$inboundSchema` instead. */
+    export const inboundSchema = User$inboundSchema;
+    /** @deprecated use `User$outboundSchema` instead. */
+    export const outboundSchema = User$outboundSchema;
+    /** @deprecated use `User$Outbound` instead. */
+    export type Outbound = User$Outbound;
 }

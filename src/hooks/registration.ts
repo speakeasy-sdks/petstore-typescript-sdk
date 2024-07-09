@@ -1,7 +1,8 @@
-import { Hooks } from "./types";
+import { Hooks } from "./types.js";
 
 import { TelemetryHooks } from "./telemetry_hooks";
 import { CachingHooks } from "./caching_hooks";
+import { ErrorHooks } from "./error_hooks";
 
 /*
  * This file is only ever generated once on the first generation and then is free to be modified.
@@ -19,4 +20,6 @@ export function initHooks(hooks: Hooks) {
     hooks.registerSDKInitHook(new TelemetryHooks());
 
     hooks.registerSDKInitHook(new CachingHooks());
+
+    hooks.registerAfterErrorHook(new ErrorHooks());
 }
